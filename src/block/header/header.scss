@@ -1,0 +1,217 @@
+$trigger_burger: 768px;
+
+.header {
+    --padding-left: min(152px, max(var(--vw)* 152, 24px));
+    --padding-right: min(140px, max(var(--vw)* 140, 24px));
+    --width: min(1440px, max(var(--vw)* 1440, 24px));
+    max-width: calc(var(--width) + var(--padding-left) + var(--padding-right));
+    margin: 0 auto;
+    padding-left: var(--padding-left);
+    padding-right: var(--padding-right);
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 17px;
+    padding-bottom: 17px;
+    position: relative;
+    @media (max-width: 1024px){
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    @media (max-width: $trigger_burger){
+        display: block;
+    }
+    &__burger {
+        display: none;
+        @media (max-width: $trigger_burger) {
+            display: flex;
+            position: relative;
+            z-index: 10;
+            width: 31.5px;
+            aspect-ratio: 1/1;
+            cursor: pointer;
+            margin: 10px 90%;
+            background-color: transparent;
+            border: 0;
+        }
+        @media (max-width: 412px) {
+            margin-top: 10px;
+        }
+    }
+    &__picture {
+        min-width: 220px;
+        @media (max-width: $trigger_burger){
+            min-width: auto;
+            width: min(325px, max(var(--vw)* 325, 180px));
+            margin: 0 auto;
+        }
+        @media (max-width: 420px){
+            width: 100%;
+        }
+    }
+}
+.menu {
+    display: flex;
+    align-items: center;
+    @media (max-width: $trigger_burger) {
+        flex-direction: column;
+        position: fixed;
+        left: 0;
+        top: 6.5rem;
+        flex-direction: column;
+        justify-content: flex-start;
+        animation: 0.5s fadeOutLeft forwards;
+        width: 100%;
+        height: 100vh;
+        max-height: none;
+        overflow-y: auto;
+        background-color: var(--white);
+        padding-top: 20px;
+    }
+    &__items {
+        display: flex;
+        align-items: center;
+        @media (max-width: $trigger_burger) {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+    &__item {
+        list-style: none;
+        padding: 5px 15px;
+        // padding-right: 5vw;
+        overflow: hidden;
+        &:last-child {
+            padding-right: 0;
+        }
+        &:first-child {
+            padding-left: 0;
+        }
+        @media (max-width: $trigger_burger) {
+            width: 100%;
+            text-align: center;
+            padding: 0;
+            margin: 12px;
+        }
+
+    }
+    &__link {
+        
+        &_btn {
+            font-size: 16px;
+            letter-spacing: 0.4px;
+        }
+        @media (max-width: $trigger_burger) {
+            font-size: 24px;
+        }
+    }
+}
+.icon-bar {
+    --h: 2px;
+    --top: 11px;
+    background: var(--text);
+    position: relative;
+    top: 12px;
+    display: block; //создаем элементы бургера
+    width: 31.5px;
+    height: var(--h);
+
+    &::before {
+        top: calc(var(--top) * -1);
+        will-change: transform;
+        transition: top .25s .25s,transform .25s;
+    }
+    &::after {
+        top: var(--top);
+        will-change: transform;
+        transition: top .25s .25s,transform .25s;
+    }
+    &::after, &::before {
+        background: var(--text);
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: var(--h);
+    }
+}
+.underline-anime {
+    padding-bottom: 2px;
+    position: relative;
+}
+
+.underline-anime::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--text);
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0); //прячем черту левее блока, он скрыт из-за overflow: hidden;
+    transition: opacity 300ms, transform 900ms;
+    will-change: transform;
+}
+
+.underline-anime:hover::after {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+}
+
+@media (max-width: $trigger_burger) {
+    .fadeIn--open .menu {
+        animation: 0.5s fadeInLeft forwards;
+        z-index: 10;
+    }
+    // бургер новый
+    .fadeIn--open .icon-bar::before {
+        top: 0;
+        transform: rotate(-45deg);
+        will-change: transform;
+        transition: top .25s,transform .25s .25s;
+    }
+
+    .fadeIn--open .icon-bar::after {
+        top: 0;
+        transform: rotate(45deg);
+        will-change: transform;
+        transition: top .25s, transform .25s .25s;
+    }
+
+    .fadeIn--open .icon-bar {
+        background: 0 0;
+    }
+}
+@keyframes fadeOutLeft {
+    from {
+        opacity: 1;
+        transform: none;
+    }
+    to {
+        opacity: 0;
+        transform: translate3d(-100%, 0, 0)
+    }
+}
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translate3d(-100%, 0, 0)
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

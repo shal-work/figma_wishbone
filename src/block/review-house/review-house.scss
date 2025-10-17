@@ -1,0 +1,57 @@
+.review {
+    width: 100%;
+    height: 600px;
+    margin-bottom: 100px;
+    @media (max-width: 768px) {
+        height: max(78vw, 300px);
+    }
+    @media (max-width: 412px) {
+        flex-direction: column-reverse;
+    }
+    &_house {
+        background-image: url('assets/img/review-house.png');
+        background-image: image-set(url("./assets/img/review-house.webp") type("image/webp"));
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    &__block {
+        --padding-left: min(336px, max(var(--vw)* 336, 10px));
+        --padding-right: min(77px, max(var(--vw)* 77, 10px));
+        --width: min(1440px, max(var(--vw)* 1440, 24px));
+        max-width: calc(var(--width) + var(--padding-left) + var(--padding-right));
+        margin: 0 auto;
+        padding-left: var(--padding-left);
+        padding-right: var(--padding-right);
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+        width: 320px;
+        height: 100%;
+        background-color: transparent;
+        width: 100%;
+        @media (max-width: 412px) {
+            width: 100%;
+            height: 100%;
+            padding: 15px;
+        }
+    }
+    &__text {
+        width: 300px;
+        backdrop-filter: blur(6px);
+        padding: 20px 12px 20px 20px;
+        border-radius: 16px;
+        box-shadow: 0 0 20px 20px rgba(236, 231, 228, 0.62);
+        @media (max-width: 412px) {
+            width: 100%;
+        }
+    }
+
+    &__picture {
+        width: 100%;
+        display: flex;
+    }
+}
+

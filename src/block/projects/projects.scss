@@ -1,0 +1,77 @@
+.projects {
+
+    --padding-left: min(138px, max(var(--vw)* 138, 10px));
+    --padding-right: var(--padding-left);
+    --width: min(1440px, max(var(--vw)* 1440, 24px));
+    max-width: calc(var(--width) + var(--padding-left) + var(--padding-right));
+    margin: 0 auto;
+    padding-left: var(--padding-left);
+    padding-right: var(--padding-right);
+    padding-top: min(114px, max(var(--vw)* 114, 40px));
+    padding-bottom: min(100px, max(var(--vw)* 100, 40px));
+    &__text {
+        color: var(--grey-text);
+        font-size: 24px;
+        line-height: 30px;
+        margin-top: 14px;
+        width: 581px;
+        margin-bottom: 42px;
+        width: 54%;
+    }
+    &__block-text {
+        width: 100%;
+    }
+
+    &__block {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: min(50px, max(var(--vw)* 50, 20px));
+        @media (max-width: 768px) {
+            width: 100%;
+            overflow: scroll;
+        }
+    }
+
+    &__item {
+        position: relative;
+        margin-right: 18px;
+        &:last-child {
+            margin-right: 0;
+        }
+        @media (max-width: 768px) {
+            min-width: 200px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+    }
+
+    &__info {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        top: 0;
+        margin-top: auto;
+        height: 100%;
+        width: 100%;
+        padding: 40px min(42px, max(var(--vw)* 42, 10px)) 37px;
+    }
+    &__title {
+        font-weight: 400;
+        font-size: min(23px, max(var(--vw)* 23, 22px));
+        line-height: min(30px, max(var(--vw)* 30, 26px));
+        color: var(--dark);
+    }
+    &__footer {
+        width: 100%;
+        text-align: center;
+    }
+    &__picture {
+        display: flex;
+        @media (max-width: 768px) {
+            border-top-right-radius: 16px;
+            overflow: hidden;
+        }
+    }
+}

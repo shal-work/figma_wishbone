@@ -1,0 +1,18 @@
+.review {
+    &_staircase {
+        background-image: url('assets/img/review-staircase.png');
+        background-image: image-set(url("./assets/img/review-staircase.webp") type("image/webp"));
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin-bottom: 0;
+    }
+    &__block_staircase {
+        align-items: start;
+        --padding-left: 38px;
+        --padding-right: 336px;
+
+        --padding-left: min(38px, max(var(--vw)* 38, 10px));
+        --padding-right: min(336px, max(var(--vw)* 336, 10px));
+    }
+}

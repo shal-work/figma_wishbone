@@ -1,0 +1,19 @@
+.review {
+    &_ladder {
+        background-image: url('assets/img/review-ladder.png');
+        background-image: image-set(url("./assets/img/review-ladder.webp") type("image/webp"));
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin-bottom: 0;
+    }
+    &__text_ladder {
+        background-color: transparent;
+        box-shadow: none;
+        backdrop-filter: none;
+        @media (max-width: 768px) {
+            backdrop-filter: blur(6px);
+            box-shadow: 0 0 20px 20px rgba(236, 231, 228, 0.62);
+        }
+    }
+}

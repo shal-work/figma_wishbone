@@ -1,0 +1,42 @@
+.get-touch {
+
+    background-color: var(--grey);
+    &__block {
+        --padding-left: min(135px, max(var(--vw)* 135, 10px));
+        --padding-right: var(--padding-left);
+        --width: min(1440px, max(var(--vw)* 1440, 24px));
+        max-width: calc(var(--width) + var(--padding-left) + var(--padding-right));
+        margin: 0 auto;
+        padding-left: var(--padding-left);
+        padding-right: var(--padding-right);
+        padding-top: min(100px, max(var(--vw)* 100, 40px));
+        padding-bottom: min(114px, max(var(--vw)* 114, 40px));
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @media (max-width: 768px) {
+            align-items: flex-end;
+            flex-direction: column;
+        }
+    }
+    &__text {
+        width: 54%;
+        @media (max-width: 768px) {
+            width: auto;
+        }
+    }
+
+    &__title {
+        font-size: min(40px, max(var(--vw)* 40, 30px));
+        line-height: min(42px, max(var(--vw)* 42, 30px));
+        color: var(--title);
+        margin-top: -4px;
+        @media (max-width: 768px) {
+           margin-top: 0;
+        }
+    }
+    &__btn {
+        margin-right: 24px;
+        margin-top: 15px;
+    }
+}

@@ -1,0 +1,69 @@
+.customers {
+    --padding-left: min(136px, max(var(--vw)* 136, 10px));
+    --padding-right: min(255px, max(var(--vw)* 255, 10px));
+    padding-left: var(--padding-left);
+    padding-right: var(--padding-right);
+    padding-top: 78px;
+    padding-bottom: 58px;
+    background-color: var(--text);
+    @media (min-width: 1920px) {
+        --padding-right: min(136px, max(var(--vw)* 136, 100px));
+    }
+    @media (max-width: 412px) {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    &__block {
+        display: flex;
+        --width: min(1440px, max(var(--vw)* 1440, 24px));
+        max-width: calc(var(--width) + var(--padding-left) + var(--padding-right));
+        margin: 0 auto;
+        @media (max-width: 768px) {
+            flex-direction: column;
+        }
+    }
+
+    &__content {
+        padding: min(55px, max(var(--vw)* 55, 0px)) min(57px, max(var(--vw)* 57, 0px)) min(75px, max(var(--vw)* 75, 40px)) 0;
+        margin-right: min(50px, max(var(--vw)* 50, 0px));
+        width: 100%;
+        @media (max-width: 768px) {
+            margin-right: 0;
+        }
+    }
+    &__title {
+        font-size: 32px;
+        line-height: 38px;
+        color: var(--white);
+        margin-bottom: 14px;
+        @media (max-width: 412px) {
+            font-size: 26px;
+        }
+    }
+    &__text {
+        color: var(--grey-light);
+        font-size: 15px;
+    }
+    &__logo {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(235px, 1fr));
+        grid-template-rows: auto;
+        align-items: center;
+        justify-items: center;
+        width: 100%;
+        @media (min-width: 1440px) {
+            grid-template-columns: repeat(2, 235px);
+        }
+        @media (max-width: 768px) {
+            row-gap: 1rem;
+            column-gap: 2rem;
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    &__item {
+
+        @media (max-width: 768px) {
+            max-width: 200px;
+        }
+    }
+}

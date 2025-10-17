@@ -1,0 +1,104 @@
+.wrapper {
+    background-color: var(--white);
+    margin: 0 auto;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+// прячем заголовок h1 
+.visually-hidden {
+    position: absolute;
+    overflow: hidden;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    width: 1px;
+    height: 1px;
+    white-space: nowrap;
+    clip-path: polygon(0px 0px, 0px 0px,0px 0px, 0px 0px);
+}
+
+.attention {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 20.4px;
+    letter-spacing: 0.5px;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: var(--attention);
+    color: var(--text-attention);
+    padding: 10px;
+    text-align: center;
+}
+
+.subtitle {
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 2px;
+    &_hero {
+        margin-bottom: 20px;
+    }
+    &_grey-light {
+        color: var(--grey-light);
+    }
+    &_grey-text {
+        color: var(--grey-text);
+    }
+    &_dark {
+        color: var(--dark);
+    }
+}
+.title {
+    font-weight: 400;
+    font-size: 39px;
+    line-height: 42px;
+    &_proccess {
+        margin-bottom: 47px;
+        text-align: center;
+    }
+    &_projects {
+        color: var(--title);
+    }
+}
+.img {
+    width: 100%;
+    height: auto;
+}
+
+.icon {
+    width: 100%;
+    height: 100%;
+}
+
+
+.user {
+    display: flex;
+    align-items: center;
+    &_about {
+        margin-top: 20px;
+        padding-left: 6px;
+    }
+    &__picture {
+        max-width: 84px;
+        width: 100%;
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 3px solid var(--grey);
+        margin-right: 30px;
+        @media (max-width: 412px) {
+            max-width: max(20vw, 30px);
+            margin-right: 20px;
+        }
+    }
+    &__name {
+        font-size: 17px;
+        line-height: 26px;
+        color: var(--title);
+    }
+    &__position {
+        font-size: 14px;
+        line-height: 14px;
+        color: var(--grey-text);
+    }
+}

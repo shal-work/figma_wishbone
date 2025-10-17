@@ -1,0 +1,61 @@
+*{
+    box-sizing: border-box;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+    // outline: 1px solid red;
+}
+body {
+    margin: 0;
+}
+:root {
+    --index: calc(1vw + 1vh);
+    --vw: calc(100vw/1440);
+    --container-padding-x: min(165px, max(var(--vw)* 165, 24px));
+    --container-width: min(14400px, max(var(--vw)* 1440, 24px));
+}
+
+a, a:link, a:visited {
+    text-decoration: none;
+}
+* {
+    font-family: "Poppins", sans-serif; 
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0;
+    color: var(--text);
+}
+
+// прячем прокрутку
+html {
+    overflow: scroll;
+    overflow-x: hidden;
+}
+::-webkit-scrollbar {
+    width: 0px;
+    height: 5px;
+    background: transparent;
+}
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    background: #646c8638;
+    border: 1px solid #858fb138;
+    border-radius: 10px;
+}
+.reset {
+    margin: 0; //при верстке по БЭМ нежелательно применять общие сброс стилей в *
+    padding: 0; //при верстке по БЭМ нежелательно применять общие сброс стилей в *
+}
+.container {
+    max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
+    margin: 0 auto;
+    padding-left: var(--container-padding-x);
+    padding-right: var(--container-padding-x);
+    width: 100%;
+}
+
+//прижать подвал / footer к низу, .conteiner { min-height: 100vh; display: flex; flex-direction: column;);
+.footer {
+    margin-top: auto;
+}

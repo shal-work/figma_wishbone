@@ -1,0 +1,99 @@
+.hero {
+    background-color: var(--grey-light);
+    position: relative;
+    @media (max-width: 1200px) {
+        position: relative;
+        align-items: flex-start;
+    }
+    @media (max-width: 480px) {
+        display: flex;
+        flex-direction: column;
+    }
+    &__block {
+        --padding-left: min(77px, max(var(--vw)* 77, 0px));
+        --padding-right: min(77px, max(var(--vw)* 77, 0px));
+        padding-left: var(--padding-left);
+        padding-right: var(--padding-right);
+        @media (min-width: 1440px) {
+            --padding-left: min(100px, max(var(--vw)* 100, 0px));
+            --padding-right: min(77px, max(var(--vw)* 77, 0px));
+            --width: min(1440px, max(var(--vw)* 1440, 24px));
+            max-width: calc(var(--width) + var(--padding-left) + var(--padding-right));
+            margin: 0 auto;
+            padding-left: var(--padding-left);
+            padding-right: var(--padding-right);
+        }
+        @media (max-width: 768px) {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+    &__content {
+        width: 50%;
+        padding-right: 116px;
+        padding-top: 140px;
+        padding-bottom: 123px;
+        @media (max-width: 1200px) {
+            max-width: 518px;
+            width: 100%;
+            position: relative;
+            background: rgba(236, 231, 228, 0.45);
+            border-radius: 16px;
+            backdrop-filter: blur(6px);
+            height: 100%;
+            padding-top: var(--padding-left);
+        }
+        @media (max-width: 768px) {
+            border-radius: 0;
+            padding: 10vw 5vw;
+            margin-bottom: 20px;
+        }
+        @media (max-width: 480px) {
+            position: relative;
+        }
+    }
+    &__title {
+        font-weight: 400;
+        font-size: min(64px, max(var(--vw)* 64, 44px));
+        line-height: 70.4px;
+        letter-spacing: 0;
+        margin-bottom: 18px;
+        @media (max-width: 412px) {
+            font-size: max(10vw, 14px);
+            line-height: max(15vw, 26px);
+        }
+    }
+    &__btn {
+        overflow: hidden;
+        padding-bottom: 5px;
+        margin-left: 26px;
+    }
+    &__link {
+        margin-top: 10px;
+        padding: 2px 2px;
+    }
+    &__picture {
+        background-image: url('assets/img/hero.png');
+        background-image: image-set(url("./assets/img/hero.webp") type("image/webp"));
+        background-position: bottom;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 50%;
+        height: 100%;
+        object-fit: cover; 
+        position: absolute;
+        right: 0;
+        @media (max-width: 1024px) {
+            width: 512px;
+        }
+        @media (max-width: 480px) {
+            position: relative;
+            height: 345px;
+            width: 100%;
+        }
+    }
+    &__text {
+        margin-bottom: 40px;
+    }
+}
+

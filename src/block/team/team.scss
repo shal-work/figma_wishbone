@@ -1,0 +1,55 @@
+.team {
+    --padding-left: min(138px, max(var(--vw)* 138, 10px));
+    --padding-right: var(--padding-left);
+    --width: min(1440px, max(var(--vw)* 1440, 24px));
+    max-width: calc(var(--width) + var(--padding-left) + var(--padding-right));
+    margin: 0 auto;
+    padding-left: var(--padding-left);
+    padding-right: var(--padding-right);
+    padding-top: min(104px, max(var(--vw)* 104, 40px));
+    padding-bottom: min(115px, max(var(--vw)* 115, 40px));
+    display: flex;
+    @media (max-width: 768px) {
+        flex-direction: column;
+    }
+    &__block {
+        width: 32%;
+        margin-right: 20px;
+        @media (max-width: 768px) {
+            width: 100%;
+            margin-right: 0;
+            margin-bottom: 30px;
+        }
+    }
+
+    &__title {
+        font-size: 32px;
+        line-height: 38px;
+        color: var(--text);
+        margin-bottom: 14px;
+    }
+
+    &__text {
+        font-size: 15px;
+        color: var(--grey-text);
+        margin-bottom: 40px;
+    }
+
+    &__persons {
+        display: grid;
+        --width: min(240px, max(var(--vw)* 240, 100px));
+        grid-template-columns: repeat(auto-fill, minmax(var(--width), 1fr));
+        column-gap: 20px;
+        row-gap: 54px;
+        width: 68%;
+        padding: 10px;
+        @media (max-width: 768px) {
+            width: 100%;
+            --width: 200px;
+        }
+        @media (max-width: 412px) {
+            row-gap: 26px;
+        }
+    }
+}
+
