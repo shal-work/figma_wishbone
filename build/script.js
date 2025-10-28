@@ -623,6 +623,25 @@ _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.toggleOverflow = functio
     return this;
 };   
 
+_core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.addOverflow = function() {
+    for(let i = 0; i < this.length; i++) {
+        if (!this[i].style) {
+            continue;
+        }
+        this[i].style.overflow = 'hidden';
+    }
+    return this;
+};
+_core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.offOverflow = function() {
+    for(let i = 0; i < this.length; i++) {
+        if (!this[i].style) {
+            continue;
+        }
+        this[i].style.overflow = '';
+    }
+    return this;
+};
+
 /***/ }),
 
 /***/ "./src/js/lib/modules/effects.js":

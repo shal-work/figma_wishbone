@@ -53,3 +53,22 @@ $.prototype.toggleOverflow = function() {
 
     return this;
 };   
+
+$.prototype.addOverflow = function() {
+    for(let i = 0; i < this.length; i++) {
+        if (!this[i].style) {
+            continue;
+        }
+        this[i].style.overflow = 'hidden';
+    }
+    return this;
+};
+$.prototype.offOverflow = function() {
+    for(let i = 0; i < this.length; i++) {
+        if (!this[i].style) {
+            continue;
+        }
+        this[i].style.overflow = '';
+    }
+    return this;
+};

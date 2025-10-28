@@ -28,10 +28,6 @@ a, a:link, a:visited {
 }
 
 // прячем прокрутку
-html {
-    overflow: scroll;
-    overflow-x: hidden;
-}
 ::-webkit-scrollbar {
     width: 0px;
     height: 5px;
