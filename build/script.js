@@ -820,14 +820,18 @@ _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.click = function(handler
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-$('.header__burger').on('click', () => { toggleBurger()});
-$('.menu').on('click', () => {toggleBurger()});
+$('.header__burger').on('click', () => { 
+    toggleBurger();
+    $('body').toggleOverflow();
+});
+$('.menu').on('click', () => {
+    toggleBurger();
+     $('body').offOverflow();
+});
 
 
 function toggleBurger () {
     $('.header').toggleClass("fadeIn--open");
-    $('.page').toggleClass('none-scroll');
-    $('body').toggleOverflow();
     
     $('.header__burger').toggleBooleanAttribute('aria-expanded');
     const burger = document.querySelector('.header__burger');
